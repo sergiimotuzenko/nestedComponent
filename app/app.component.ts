@@ -1,37 +1,30 @@
 import { Component } from '@angular/core';
  
+
+ 
 @Component({
  
-selector: 'my-app',
+  selector: 'my-app',
+
+   template: `
  
-         styles : [`
+<div class="parent">
  
-                     .parent {
+    <h1>Author : {{name}}</h1>
  
-                                 background : #c7c7c7;
+       <child-component (notify)="onNotify($event);" [title]='childTitle'></child-component>
  
-                                 color : #000;
+</div>
  
-                                 padding: 20px;
- 
-                     }
- 
-         `],
- 
-template: `
- 
-                     <div class="parent">
- 
-                                 <h1>{{name}}</h1>
- 
-                     </div>
- 
-         `
- 
+  ` 
 })
  
 export class AppComponent {
  
-         name = "Parent Component"
- 
+name = "sergii"
+ childTitle:string = 'This text is passed to child';
+
+ onNotify(message:string):void {
+    alert(message);
+  }
 }
