@@ -20,7 +20,7 @@ template: `
  
                      <div class="child">
  
-                                 <h2>{{name}}</h2>
+                                 <h2>{{name}} test</h2>
  
                      </div>
  
